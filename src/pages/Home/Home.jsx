@@ -112,7 +112,7 @@ function Home() {
             </MapText>
             <MapContainer>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.1705462779387!2d-46.65390908449991!3d-23.563272167596592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0x63b9f0e3703cb8b4!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1647891512345!5m2!1spt-BR!2sbr"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.342401686088!2d-35.49327292426145!3d-6.849495467009947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7adb6a66a55705b%3A0xa4ab9e6afeec4005!2sAv.%20Padre%20In%C3%A1cio%20de%20Almeida%2C%20171%20-%20Bairro%20Novo%2C%20Guarabira%20-%20PB%2C%2058200-000!5e0!3m2!1spt-BR!2sbr!4v1739296434291!5m2!1spt-BR!2sbr"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
