@@ -1,9 +1,4 @@
-import styled from 'styled-components'
-
-const ProductsContainer = styled.div`
-  padding: 4rem 2rem;
-  min-height: 80vh;
-`
+import { ProductsContainer } from './styles'
 
 function Produtos() {
   return (

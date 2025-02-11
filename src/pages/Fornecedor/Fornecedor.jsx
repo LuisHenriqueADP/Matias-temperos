@@ -1,9 +1,4 @@
-import styled from 'styled-components'
-
-const FornecedorContainer = styled.div`
-  padding: 4rem 2rem;
-  min-height: 80vh;
-`
+import { FornecedorContainer } from './styles'
 
 function Fornecedor() {
   return (
