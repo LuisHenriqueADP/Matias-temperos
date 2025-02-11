@@ -40,8 +40,22 @@ function Home() {
         </Hero>
       </HeroContainer>
       <AboutSection id="sobre">
-        <h2>Sobre Nós</h2>
-        <p>Somos uma empresa dedicada a criar soluções digitais incríveis.</p>
+        <img 
+          src="/images/kit-20-pcts-sementes-de-ervas-temperos-condimentos-lacrados-311201-MLB20278384226_042015-F.jpg" 
+          alt="Variedade de temperos e especiarias"
+        />
+        <div className="about-content">
+          <h2>Somos mais do que um comércio especializado em temperos e ervas.</h2>
+          <p>
+            Somos uma paixão que floresceu ao longo dos anos, tornando-se referência no mercado de especiarias, oferecendo uma seleção extraordinária de sabores e aromas. Contamos com uma diversidade encantadora de produtos, cuidadosamente escolhidos para atender aos mais elevados padrões de qualidade e enriquecer as criações culinárias de nossos clientes.
+          </p>
+          <p>
+            Uma tradição que atravessa gerações, impulsionada pelo amor à culinária e pelo desejo de proporcionar experiências gastronômicas únicas.
+          </p>
+          <p>
+            No Comércio Matias Ervas e Temperos, acreditamos que cada especiaria carrega consigo uma história, um aroma e um toque especial capaz de transformar qualquer prato. Por isso, dedicamos nossa jornada à busca das melhores ervas e temperos, selecionados com rigor e carinho, garantindo frescor, pureza e autenticidade em cada produto que oferecemos.
+          </p>
+        </div>
       </AboutSection>
       <Testimonials />
       <ContactContainer>

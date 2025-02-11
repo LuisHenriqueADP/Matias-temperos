@@ -64,18 +64,34 @@ export const WhatsAppButton = styled.a`
   }
 `
 
+export const ContactContainer = styled.div`
+  padding: 4rem 0 6rem 0;
+  background-color: #f8fafc;
+  margin-bottom: 2rem;
+`
+
 export const ContactSection = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  padding: 6rem 2rem;
-  min-height: 800px;
+  padding: 0 2rem;
   background-color: #f8fafc;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    min-height: auto;
-    padding: 4rem 2rem;
+    padding: 0 2rem;
+    
+    > div {
+      height: auto;
+    }
   }
 `
 
@@ -138,17 +154,47 @@ export const TextArea = styled.textarea`
 
 export const MapContainer = styled.div`
   width: 100%;
-  height: 400px;
+  height: 300px;
   border-radius: 8px;
   overflow: hidden;
 `
 
 export const AboutSection = styled.section`
-  padding: 2rem 1rem;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(5px);
-  text-align: center;
-  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 6rem 2rem;
+  background: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .about-content {
+    h2 {
+      color: #175d48;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      color: #4a5568;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+  }
 `
 
 export const ContactText = styled.div`
@@ -200,8 +246,4 @@ export const MapText = styled.div`
       margin-bottom: 1rem;
       font-size: 1.1rem;
     }
-  }
-`
-export const ContactContainer = styled.div`
-  padding: 2rem 2rem;
-`
+  }`

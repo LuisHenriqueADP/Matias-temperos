@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 
 export const Logo = styled.img`
@@ -59,4 +60,10 @@ export const MainWrapper = styled.div`
   min-height: 100vh;
   overflow: hidden;
   width: 100%;
+`
+
+export const GlobalStyle = createGlobalStyle`
+  html {
+    scroll-behavior: smooth;
+  }
 `

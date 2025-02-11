@@ -4,7 +4,7 @@ import Produtos from './pages/Produtos/Produtos'
 import Fornecedor from './pages/Fornecedor/Fornecedor'
 import Produto from './pages/Produto/Produto'
 import logoImage from './assets/logo.png'
-import { MainWrapper, Header, Logo } from './styles'
+import { MainWrapper, Header, Logo, GlobalStyle } from './styles'
 import { useLocation } from 'react-router-dom'
 
 const HeaderWithBackground = () => {
@@ -28,6 +28,7 @@ const HeaderWithBackground = () => {
 function App() {
   return (
     <Router>
+      <GlobalStyle />
       <MainWrapper>
         <HeaderWithBackground>
           <Logo src={logoImage} alt="Logo da empresa" />
