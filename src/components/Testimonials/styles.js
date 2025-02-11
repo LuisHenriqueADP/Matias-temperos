@@ -60,25 +60,37 @@ export const SliderButton = styled.button`
   background: #175d48;
   color: white;
   border: none;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
   transition: all 0.3s ease;
-
-  &:hover {
-    background: #1a6b55;
-    transform: scale(1.1);
-  }
+  padding: 0;
 
   svg {
     width: 24px;
     height: 24px;
     color: white;
-    fill: currentColor;
+  }
+
+  &.prev {
+    left: 0;
+  }
+
+  &.next {
+    right: 0;
+  }
+
+  &:hover {
+    background: #1a6b55;
+    transform: translateY(-50%) scale(1.1);
   }
 `
 

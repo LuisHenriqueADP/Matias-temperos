@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { WhatsAppButton, HeroContainer, Hero, AboutSection, ContactSection, ContactText, ContactForm, Input, TextArea, MapText, MapContainer, ContactContainer } from './styles'
 import Footer from '../../components/Footer'
 import Testimonials from '../../components/Testimonials/Testimonials'
+import ProductCarousel from '../../components/ProductCarousel/ProductCarousel'
 
 
 function Home() {
@@ -57,6 +58,7 @@ function Home() {
           </p>
         </div>
       </AboutSection>
+      <ProductCarousel />
       <Testimonials />
       <ContactContainer>
         <ContactSection id="contato">
