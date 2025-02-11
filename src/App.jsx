@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Produtos from './pages/Produtos/Produtos'
 import Fornecedor from './pages/Fornecedor/Fornecedor'
+import Produto from './pages/Produto/Produto'
 import logoImage from './assets/logo.png'
 import { MainWrapper, Header, Logo } from './styles'
 import { useLocation } from 'react-router-dom'
@@ -41,6 +42,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/produtos" element={<Produtos />} />
+          <Route path="/produtos/:id" element={<Produto />} />
           <Route path="/fornecedor" element={<Fornecedor />} />
         </Routes>
       </MainWrapper>
