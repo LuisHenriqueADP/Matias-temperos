@@ -61,6 +61,7 @@ export const WhatsAppButton = styled.a`
   &:hover {
     transform: translateY(-2px);
     background-color: #124a3a;
+    color: white;
   }
 `
 
@@ -247,3 +248,16 @@ export const MapText = styled.div`
       font-size: 1.1rem;
     }
   }`
+
+export const SubmitBtn = styled.button`
+ background-color: #175d48;
+        padding: 0.8rem 1.5rem;
+        border-radius: 25px;
+        margin-left: 1rem;
+        color : white;
+
+        &:hover {
+          background-color: #124a3a;
+          color: white;
+        }
+`

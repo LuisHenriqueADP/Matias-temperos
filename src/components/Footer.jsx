@@ -38,8 +38,9 @@ const Footer = () => {
 
         <Column>
           <h3>CONTATO</h3>
-          <p>(83) 98172-9325</p>
-          <p>matiastemperos@gmail.com</p>
+          <p>(83) 98219-6369</p>
+          <p>(83) 98780-2712</p>
+          <p>Comercialmatias1@gmail.com</p>
           <SocialIcons>
             <a href="#"><FaInstagram /></a>
             <a href="#"><FaFacebook /></a>

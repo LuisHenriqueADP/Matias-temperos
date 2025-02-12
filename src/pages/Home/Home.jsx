@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { WhatsAppButton, HeroContainer, Hero, AboutSection, ContactSection, ContactText, ContactForm, Input, TextArea, MapText, MapContainer, ContactContainer } from './styles'
+import { WhatsAppButton, HeroContainer, Hero, AboutSection, ContactSection, ContactText, ContactForm, Input, TextArea, MapText, MapContainer, ContactContainer, SubmitBtn } from './styles'
 import Footer from '../../components/Footer'
 import Testimonials from '../../components/Testimonials/Testimonials'
 import ProductCarousel from '../../components/ProductCarousel/ProductCarousel'
@@ -24,6 +24,15 @@ function Home() {
       [name]: value
     }))
   }
+
+  const handleEmail = ({email, nome, mensagem}) => {
+    console.log(mensagem)
+    const subject = `Contato via Formulário - ${email}`;
+    const body = `Nome: ${nome}%0D%0AEmail: ${email}%0D%0A%0D%0A`+mensagem.replace(/\n/g, "%0D%0A");
+  
+    window.location.href = `mailto:${'igoradelino@gmail.com'}?subject=${subject}&body=${body}`; // alterar depois o e-mail
+  };
+  
 
   return (
     <>
@@ -95,13 +104,16 @@ function Home() {
                 onChange={handleChange}
                 required
               />
-              <WhatsAppButton 
-                href="https://api.whatsapp.com/send/?phone=5583982196369&text&type=phone_number&app_absent=0"
-                target="_blank"
-                rel="noopener noreferrer"
+              <SubmitBtn 
+              type="button"
+              onClick={() => handleEmail({
+                email: formData.email,
+                nome: formData.nome,
+                mensagem: formData.mensagem
+              })} 
               >
                 Enviar Mensagem
-              </WhatsAppButton>
+              </SubmitBtn>
             </ContactForm>
           </div>
 

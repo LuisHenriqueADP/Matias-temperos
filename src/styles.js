@@ -20,6 +20,7 @@ export const Header = styled.header`
   left: 0;
   box-sizing: border-box;
   background-color: ${({ isHome }) => (isHome ? "transparent" : "#333")};
+  padding: 1.5rem 12rem;
 
   h2, nav {
     position: relative;
@@ -67,3 +68,5 @@ export const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
   }
 `
+
+
