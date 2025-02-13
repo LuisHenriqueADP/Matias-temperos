@@ -3,7 +3,7 @@ import Home from './pages/Home/Home'
 import Produtos from './pages/Produtos/Produtos'
 import Fornecedor from './pages/Fornecedor/Fornecedor'
 import Produto from './pages/Produto/Produto'
-import logoImage from './assets/logo.png'
+import logoImage from './assets/logo_correcao.png'
 import { MainWrapper, Header, Logo, GlobalStyle } from './styles'
 import { useLocation } from 'react-router-dom'
 
