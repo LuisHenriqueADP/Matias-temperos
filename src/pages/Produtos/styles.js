@@ -5,6 +5,10 @@ export const ProductsContainer = styled.div`
   min-height: 80vh;
   max-width: 1200px;
   margin: 0 auto;
+
+  h1 {
+    color: #175d48
+  }
 `
 
 export const ProductsGrid = styled.div`
@@ -57,3 +61,48 @@ export const ProductInfo = styled.div`
     margin-bottom: 0;
   }
 `
+
+export const PaginationContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 5px;
+`;
+
+export const PaginationButton = styled.button`
+  background: #175d48;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #14804c;
+  }
+
+  &:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+`;
+
+/* Estilos para os quadradinhos numerados */
+export const PageNumber = styled.button`
+  background: ${({ active }) => (active ? '#14804c' : '#f3f3f3')};
+  color: ${({ active }) => (active ? '#fff' : '#333')};
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #14804c;
+    color: white;
+  }
+`;
