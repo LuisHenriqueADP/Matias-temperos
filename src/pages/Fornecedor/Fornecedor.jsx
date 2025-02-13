@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { FornecedorContainer, FornecedorForm, Input, TextArea, SubmitBtn, FornecedorText } from './styles'
+import Footer from '../../components/Footer'
 
 function Fornecedor() {
   const [formData, setFormData] = useState({
@@ -52,54 +53,57 @@ function Fornecedor() {
   };
 
   return (
-    <FornecedorContainer>
-      <FornecedorText>
-        <h1>Seja Nosso Fornecedor</h1>
-        <p>
-          Junte-se à nossa rede de fornecedores e faça parte de uma empresa comprometida 
-          com a qualidade e excelência em temperos e especiarias. Preencha o formulário 
-          abaixo e entraremos em contato.
-        </p>
-      </FornecedorText>
-      
-      <FornecedorForm onSubmit={handleSubmit}>
-        <Input
-          type="text"
-          name="nome"
-          placeholder="Nome da Empresa"
-          value={formData.nome}
-          onChange={handleChange}
-          required
-        />
-        <Input
-          type="email"
-          name="email"
-          placeholder="Email Comercial"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <Input
-          type="text"
-          name="cnpj"
-          placeholder="CNPJ (XX.XXX.XXX/XXXX-XX)"
-          value={formData.cnpj}
-          onChange={handleChange}
-          maxLength={18}
-          required
-        />
-        <TextArea
-          name="mensagem"
-          placeholder="Descreva seus produtos e serviços"
-          value={formData.mensagem}
-          onChange={handleChange}
-          required
-        />
-        <SubmitBtn type="submit">
-          Enviar Proposta
-        </SubmitBtn>
-      </FornecedorForm>
-    </FornecedorContainer>
+    <>
+      <FornecedorContainer>
+        <FornecedorText>
+          <h1>Seja Nosso Fornecedor</h1>
+          <p>
+            Junte-se à nossa rede de fornecedores e faça parte de uma empresa comprometida 
+            com a qualidade e excelência em temperos e especiarias. Preencha o formulário 
+            abaixo e entraremos em contato.
+          </p>
+        </FornecedorText>
+        
+        <FornecedorForm onSubmit={handleSubmit}>
+          <Input
+            type="text"
+            name="nome"
+            placeholder="Nome da Empresa"
+            value={formData.nome}
+            onChange={handleChange}
+            required
+          />
+          <Input
+            type="email"
+            name="email"
+            placeholder="Email Comercial"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <Input
+            type="text"
+            name="cnpj"
+            placeholder="CNPJ (XX.XXX.XXX/XXXX-XX)"
+            value={formData.cnpj}
+            onChange={handleChange}
+            maxLength={18}
+            required
+          />
+          <TextArea
+            name="mensagem"
+            placeholder="Descreva seus produtos e serviços"
+            value={formData.mensagem}
+            onChange={handleChange}
+            required
+          />
+          <SubmitBtn type="submit">
+            Enviar Proposta
+          </SubmitBtn>
+        </FornecedorForm>
+      </FornecedorContainer>
+      <Footer />
+    </>
   )
 }
 

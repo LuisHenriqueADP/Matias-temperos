@@ -87,5 +87,5 @@ export const SubmitBtn = styled.button`
 
   &:hover {
     background-color: #124a3a;
-  }
+  } 
 `

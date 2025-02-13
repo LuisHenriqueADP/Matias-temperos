@@ -2,43 +2,70 @@ import styled from 'styled-components';
 
 export const CarouselContainer = styled.section`
   padding: 4rem 2rem;
-  background-color: #f8fafc;
-  position: relative;
+  background: #f9fafb;
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
 `;
 
 export const CarouselTitle = styled.h2`
   text-align: center;
   color: #175d48;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const CarouselWrapper = styled.div`
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 50px;
 `;
 
 export const CarouselContent = styled.div`
   display: flex;
   gap: 2rem;
-  overflow: hidden;
+  overflow-x: auto;
+  scroll-behavior: smooth;
   padding: 1rem;
+  justify-content: center;
+
+  @media (max-width: 1024px) {
+    gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: 0.5rem;
+  }
 `;
 
 export const ProductCard = styled.div`
-  flex: 0 0 calc(33.333% - 2rem);
+  flex: 0 0 calc(33.333% - 1.33rem);
   background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s ease;
-  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  @media (max-width: 1024px) {
+    flex: 0 0 calc(50% - 1rem);
+  }
+
+  @media (max-width: 768px) {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+  }
 
   &:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
   }
 `;
 
@@ -51,6 +78,7 @@ export const ProductImage = styled.img`
 
 export const ProductInfo = styled.div`
   padding: 1.5rem;
+  text-align: center;
 
   h3 {
     color: #175d48;
@@ -70,39 +98,48 @@ export const ProductInfo = styled.div`
 `;
 
 export const CarouselButton = styled.button`
-  background: #175d48;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(23, 93, 72, 0.8);
   color: white;
   border: none;
   width: 48px;
   height: 48px;
   border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  transition: all 0.3s ease;
-  padding: 0;
-
-  svg {
-    width: 24px;
-    height: 24px;
-    color: white;
-  }
+  transition: background 0.3s ease, transform 0.3s ease;
 
   &.prev {
-    left: 0;
+    left: 10px;
   }
 
   &.next {
-    right: 0;
+    right: 10px;
   }
 
   &:hover {
-    background: #1a6b55;
+    background: rgba(23, 93, 72, 1);
     transform: translateY(-50%) scale(1.1);
   }
-`; 
+
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+  }
+`;
+
+export const NavigationButtons = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+`;

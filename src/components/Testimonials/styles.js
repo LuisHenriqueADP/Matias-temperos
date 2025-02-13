@@ -17,7 +17,7 @@ export const TestimonialsContainer = styled.section`
     bottom: 0;
     background: rgba(0, 0, 0, 0.7);
   }
-`
+`;
 
 export const TestimonialsContent = styled.div`
   max-width: 1200px;
@@ -30,31 +30,46 @@ export const TestimonialsContent = styled.div`
     color: #ffffff;
     margin-bottom: 2rem;
     font-size: 2rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
   }
 
   p {
     color: #ffffff;
     margin-bottom: 3rem;
+    font-size: 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
   }
-`
+`;
 
 export const TestimonialSlider = styled.div`
   display: flex;
   gap: 2rem;
-  overflow-x: hidden;
-  position: relative;
+  overflow-x: auto;
+  scroll-behavior: smooth;
   padding: 1rem;
   margin-bottom: 2rem;
-`
+  justify-content: center;
+  
+  @media (max-width: 768px) {
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+`;
 
 export const NavigationButtons = styled.div`
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   margin-top: 2rem;
   z-index: 2;
   position: relative;
-`
+`;
 
 export const SliderButton = styled.button`
   background: #175d48;
@@ -81,18 +96,28 @@ export const SliderButton = styled.button`
   }
 
   &.prev {
-    left: 0;
+    left: 10px;
   }
 
   &.next {
-    right: 0;
+    right: 10px;
   }
 
   &:hover {
     background: #1a6b55;
     transform: translateY(-50%) scale(1.1);
   }
-`
+
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+`;
 
 export const TestimonialCard = styled.div`
   background: rgba(255, 255, 255, 0.95);
@@ -100,8 +125,10 @@ export const TestimonialCard = styled.div`
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   min-width: 300px;
+  max-width: 400px;
   flex: 1;
   backdrop-filter: blur(5px);
+  text-align: center;
 
   img {
     width: 60px;
@@ -126,4 +153,9 @@ export const TestimonialCard = styled.div`
     font-size: 0.9rem;
     margin-bottom: 0;
   }
-` 
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    min-width: 260px;
+  }
+`;

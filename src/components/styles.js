@@ -7,7 +7,12 @@ export const FooterContainer = styled.footer`
   font-size: 14px;
   display: flex;
   flex-direction: column;
-  height: 40vh;
+  height: auto;
+  min-height: 40vh;
+
+  @media (max-width: 768px) {
+    padding: 30px 15px;
+  }
 `;
 
 export const FooterSection = styled.div`
@@ -15,8 +20,14 @@ export const FooterSection = styled.div`
   justify-content: space-around;
   flex-wrap: wrap;
   max-width: 1200px;
-  margin: auto auto;
+  margin: auto;
   gap: 30px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 export const Column = styled.div`
@@ -45,11 +56,18 @@ export const Column = styled.div`
   a:hover {
     text-decoration: underline;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const Logo = styled.img`
   width: 150px;
   margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const SocialIcons = styled.div`
@@ -57,6 +75,7 @@ export const SocialIcons = styled.div`
   gap: 15px;
   font-size: 20px;
   margin-top: 10px;
+  justify-content: center;
 
   a {
     color: white;
@@ -69,6 +88,7 @@ export const SocialIcons = styled.div`
 `;
 
 export const Newsletter = styled.div`
+  text-align: center;
 
   p {
     margin-bottom: 10px;
@@ -80,6 +100,11 @@ export const Newsletter = styled.div`
     border: none;
     border-radius: 5px;
     margin-right: 5px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-bottom: 10px;
+    }
   }
 
   button {
@@ -89,6 +114,10 @@ export const Newsletter = styled.div`
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   button:hover {
@@ -113,6 +142,13 @@ export const Copyright = styled.div`
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
+
+    @media (max-width: 768px) {
+      bottom: 15px;
+      right: 15px;
+      font-size: 20px;
+      padding: 8px;
+    }
   }
 
   .whatsapp-icon:hover {

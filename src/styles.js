@@ -3,8 +3,12 @@ import { createGlobalStyle } from 'styled-components'
 
 
 export const Logo = styled.img`
-  height: 65px;
+  height: 60px;
   width: auto;
+  
+  @media (max-width: 768px) {
+    height: 40px;
+  }
 `
 
 export const Header = styled.header`
@@ -14,13 +18,11 @@ export const Header = styled.header`
   align-items: center;
   position: absolute;
   z-index: 10;
-  height: 80px;
   width: 100%;
   top: 0;
   left: 0;
   box-sizing: border-box;
   background-color: ${({ isHome }) => (isHome ? "transparent" : "#333")};
-  padding: 1.5rem 12rem;
 
   h2, nav {
     position: relative;
@@ -36,6 +38,7 @@ export const Header = styled.header`
       color: white;
       font-size: 1.1rem;
       font-weight: 500;
+      text-decoration: none;
       
       &:hover {
         color: #e2e8f0;
@@ -50,6 +53,29 @@ export const Header = styled.header`
         &:hover {
           background-color: #124a3a;
           color: white;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    flex-direction: column;
+    height: auto;
+    
+    nav {
+      margin-top: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      
+      a {
+        font-size: 1rem;
+        
+        &:last-child {
+          margin-left: 0;
+          width: 100%;
+          text-align: center;
         }
       }
     }
