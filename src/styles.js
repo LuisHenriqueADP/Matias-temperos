@@ -60,23 +60,34 @@ export const NavMenu = styled.nav`
   @media (max-width: 768px) {
     display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
     flex-direction: column;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
-    background-color: #333;
-    padding: 1rem;
-    gap: 1rem;
+    bottom: 0;
+    background-color: rgba(51, 51, 51, 0.98);
+    padding: 5rem 2rem;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
     
     a {
       width: 100%;
       text-align: center;
-      padding: 0.5rem;
+      font-size: 1.5rem;
+      padding: 1rem;
       margin: 0;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.1);
+      }
       
       &:last-child {
         margin: 0;
         width: auto;
+        min-width: 200px;
       }
     }
   }
@@ -87,9 +98,11 @@ export const HamburgerButton = styled.button`
   background: none;
   border: none;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
   padding: 0.5rem;
+  position: relative;
+  z-index: 10;
   
   @media (max-width: 768px) {
     display: block;
