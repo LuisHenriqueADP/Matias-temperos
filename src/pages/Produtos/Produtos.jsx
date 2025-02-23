@@ -40,6 +40,13 @@ function Produtos() {
               <ProductInfo>
                 <h3>{produto.name}</h3>
                 <p>{produto.description}</p>
+                <div className="product-details">
+                  <span className="unit-badge">{produto.unidade}</span>
+                  <div className="price-info">
+                    <p>Preço/Kg: {produto.precoKg}</p>
+                    <p>Preço/Fardo: {produto.precoFardo}</p>
+                  </div>
+                </div>
               </ProductInfo>
             </ProductCard>
           ))}
@@ -53,15 +60,47 @@ function Produtos() {
             Anterior
           </PaginationButton>
           
-          {Array.from({ length: totalPages }, (_, i) => (
-            <PageNumber 
-              key={i + 1} 
-              active={currentPage === i + 1}
-              onClick={() => setCurrentPage(i + 1)}
-            >
-              {i + 1}
-            </PageNumber>
-          ))}
+          {(() => {
+            const pageWindow = [];
+            let startPage = Math.max(1, currentPage - 1);
+            let endPage = Math.min(startPage + 2, totalPages);
+            
+            if (endPage - startPage < 2) {
+              startPage = Math.max(1, endPage - 2);
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+              pageWindow.push(
+                <PageNumber 
+                  key={i} 
+                  active={currentPage === i}
+                  onClick={() => setCurrentPage(i)}
+                >
+                  {i}
+                </PageNumber>
+              );
+            }
+
+            return (
+              <>
+                {startPage > 1 && (
+                  <>
+                    <PageNumber onClick={() => setCurrentPage(1)}>1</PageNumber>
+                    {startPage > 2 && <span>...</span>}
+                  </>
+                )}
+                {pageWindow}
+                {endPage < totalPages && (
+                  <>
+                    {endPage < totalPages - 1 && <span>...</span>}
+                    <PageNumber onClick={() => setCurrentPage(totalPages)}>
+                      {totalPages}
+                    </PageNumber>
+                  </>
+                )}
+              </>
+            );
+          })()}
           
           <PaginationButton 
             onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}

@@ -22,12 +22,18 @@ export const ProductsGrid = styled.div`
 export const ProductCard = styled.div`
   background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
   width: 100%;
   display: flex;
   flex-direction: column;
   height: 450px;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
 `
 
 export const ProductImage = styled.img`
@@ -43,22 +49,44 @@ export const ProductImage = styled.img`
 `
 
 export const ProductInfo = styled.div`
-  padding: 1.5rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-
+  padding: 1rem;
+  
   h3 {
     color: #175d48;
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   p {
-    color: #4a5568;
+    color: #666;
     font-size: 0.9rem;
-    line-height: 1.4;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .product-details {
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #eee;
+  }
+
+  .unit-badge {
+    background: #14804c;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+
+  .price-info {
+    p {
+      color: #14804c;
+      font-weight: 500;
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
   }
 `
 
@@ -68,6 +96,11 @@ export const PaginationContainer = styled.div`
   align-items: center;
   margin-top: 20px;
   gap: 5px;
+
+  span {
+    color: #175d48;
+    margin: 0 5px;
+  }
 `;
 
 export const PaginationButton = styled.button`
